@@ -1,4 +1,4 @@
-# ninmagic-cheats 1.3.2
+# ninmagic-cheats 1.3.3
 
 NRO para Nintendo Switch con Atmosphère, interfaz en español, varios colores neón y el logo original de NinMagic dentro de la aplicación y en hbmenu. Independiente de NinMagic Cleaner.
 
@@ -7,6 +7,8 @@ Esta versión se centra en cheats de jugabilidad: vida, munición, dinero y otra
 La actualización 1.3.1 corrige los nombres ilegibles de juegos cuando el sistema entrega metadatos NACP comprimidos. Los identificadores de juego y Build ID siguen comprobándose por separado para elegir los cheats de la versión exacta.
 
 La 1.3.2 permite seguir reduciendo búsquedas desconocidas con más de 20.000 coincidencias. Las posiciones que sobreviven se filtran desde la microSD sin cargarlas todas en RAM; no se abandona la comparación para volver a la referencia inicial.
+
+La 1.3.3 añade recuperar una comparación anterior: **Y en el menú principal del overlay** o **ZL en los resultados del NRO**. Un resultado de cero se muestra como cero; no vuelve a filtrar una lista vacía ni sobrescribe la copia recuperable. Recuperar no lee ni escribe valores del juego y exige la misma sesión y datos guardados íntegros.
 
 ## Instalar
 
@@ -20,7 +22,7 @@ El catálogo conserva versiones antiguas identificadas por Title ID y Build ID; 
 
 **ZR: Crear** abre un buscador guiado, también para juegos sin códigos publicados. Pregunta qué quieres buscar (salud, munición, vidas, magia/energía, kits/objetos, dinero, velocidad/salto u otro valor) y si aparece como número o puntos/barra. La finalidad es una etiqueta; no identifica por sí sola lo que significa una dirección.
 
-Para los puntos blancos de salud de Terminator 2D: NO FATE, selecciona **Salud → Puntos o barra**, pulsa **Y → A** para guardar una referencia, vuelve al juego, pierde un punto y regresa por Álbum. Elige **Disminuyó → Y** y repite la comparación tras otro cambio. La búsqueda se conserva al cerrar NinMagic si mantienes el mismo proceso del juego abierto. Al recuperarla se presenta como **Otro valor**, sin asumir que una coincidencia sea salud.
+Para los puntos blancos de salud de Terminator 2D: NO FATE, selecciona **Salud → Puntos o barra**, pulsa **Y → A** para guardar una referencia, vuelve al juego, pierde un punto y regresa por Álbum. Elige **Cambió → Y**; después muévete sin perder salud y compara **No cambió**. Repite **Cambió** tras recibir daño antes de confirmar el filtro. No se conoce de antemano si la representación interna aumenta o disminuye. La búsqueda se conserva al cerrar NinMagic si mantienes el mismo proceso del juego abierto. Al recuperarla se presenta como **Otro valor**, sin asumir que una coincidencia sea salud.
 
 Se admite búsqueda exacta y valor desconocido, con comparaciones de igual, cambió, no cambió, aumentó o disminuyó; los formatos disponibles son enteros de 8/16/32 bits y decimal de 32 bits. Se leen páginas de datos MAIN/HEAP, hasta 512 MiB, y se informa si la cobertura es parcial. Las comparaciones de una referencia desconocida pueden conservar más de 20.000 coincidencias en la microSD y seguir filtrándose. La lista se carga en RAM cuando es suficientemente pequeña.
 
