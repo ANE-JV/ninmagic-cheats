@@ -1,4 +1,4 @@
-# ninmagic-cheats 1.3.3
+# ninmagic-cheats 1.3.4
 
 NRO para Nintendo Switch con Atmosphère, interfaz en español, varios colores neón y el logo original de NinMagic dentro de la aplicación y en hbmenu. Independiente de NinMagic Cleaner.
 
@@ -9,6 +9,8 @@ La actualización 1.3.1 corrige los nombres ilegibles de juegos cuando el sistem
 La 1.3.2 permite seguir reduciendo búsquedas desconocidas con más de 20.000 coincidencias. Las posiciones que sobreviven se filtran desde la microSD sin cargarlas todas en RAM; no se abandona la comparación para volver a la referencia inicial.
 
 La 1.3.3 añade recuperar una comparación anterior: **Y en el menú principal del overlay** o **ZL en los resultados del NRO**. Un resultado de cero se muestra como cero; no vuelve a filtrar una lista vacía ni sobrescribe la copia recuperable. Recuperar no lee ni escribe valores del juego y exige la misma sesión y datos guardados íntegros.
+
+La 1.3.4 conserva el último resultado de prueba al reabrir el overlay y separa aquel resultado del estado actual del motor y de la lectura del valor. **X** comprueba sin activar códigos y **R** muestra el informe. También corrige el texto que aparecía cortado aunque cupiera. Una lectura coincidente o un código habilitado todavía no demuestran que la dirección controle la salud.
 
 ## Instalar
 
@@ -39,6 +41,12 @@ Las referencias privadas y sus comprobaciones CRC se guardan en `config/NinMagic
 Permite elegir el lado del panel, guardar una referencia, ocultarse para seguir leyendo mientras juegas y volver a comparar sin abrir Álbum. Un HUD pasivo muestra progreso y coincidencias sin usar los botones normales del juego. Ocultar mantiene su hilo; salir al menú de overlays lo cancela y espera su cierre. Necesita que indiques cambios relevantes; no identifica salud automáticamente ni activa candidatos sin confirmarlos.
 
 La guía está en `docs/overlay-guide.md`. El complemento tiene compilación y pruebas en PC; su funcionamiento, memoria disponible y compatibilidad concreta con firmware 23 aún requieren prueba real en consola. No uses simultáneamente los dos frontends de NinMagic.
+
+## Importación local de cheats publicados
+
+El archivo opcional `config/NinMagicCheats/manual-cheats.zip` permite incorporar una copia local de códigos publicados sin cambiar las fuentes automáticas ni los catálogos oficiales. Usa entradas `<TITLEID>/cheats/<BUILDID>.txt`; se comprueban límites, CRC y sintaxis antes de añadirlas como **Importacion local**. Un archivo inválido se omite con un aviso y no invalida la caché oficial. Copiar este ZIP no instala ni activa códigos en Atmosphère: hay que seleccionarlos y confirmar en la aplicación, con el Build ID exacto comprobado.
+
+Las importaciones personales no se incluyen en el paquete público de NinMagic. Conserva la fuente y los créditos del autor. Que un código esté publicado y coincida con el Build ID no sustituye una prueba de su efecto en el juego.
 
 ## Actualizar la aplicación sin PC
 
