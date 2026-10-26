@@ -20,6 +20,8 @@ Si un filtro pasa de dos coincidencias a cero, el cero se conserva y se muestra.
 
 **Quitar mis cheats** pide confirmar antes de retirar los códigos registrados por NinMagic en esa sesión. No restaura necesariamente los valores que ya cambiaron ni una partida guardada; reinicia el juego si hace falta. Las pruebas son solo de esa sesión y no se exportan como cheats portables.
 
+Si no hay códigos propios que retirar, se indica sin crear una prueba fallida ni bloquear la búsqueda. La referencia inicial se muestra como **Referencia guardada**, aunque exista un informe de una prueba anterior; el contador de coincidencias empieza a ser útil después de la primera comparación.
+
 Ocultar el panel conserva el hilo. Para salir al menú de overlays, cancela primero con X y espera a que termine la lectura. Al cerrar, el hilo se cancela y se espera su salida antes de descargar el overlay. Mantén el mismo juego y la misma sesión: reiniciarlo invalida las direcciones.
 
 La pantalla muestra progreso y cobertura parcial; una gran cantidad de coincidencias puede continuar filtrándose desde la SD. El overlay usa una carpeta de búsqueda independiente del NRO y comparte el recibo de retirada. Usa un solo frontend de NinMagic cada vez. El logo es el mismo original de la aplicación.

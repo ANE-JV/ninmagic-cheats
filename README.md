@@ -1,4 +1,4 @@
-# ninmagic-cheats 1.3.4
+# ninmagic-cheats 1.3.5
 
 NRO para Nintendo Switch con Atmosphère, interfaz en español, varios colores neón y el logo original de NinMagic dentro de la aplicación y en hbmenu. Independiente de NinMagic Cleaner.
 
@@ -11,6 +11,8 @@ La 1.3.2 permite seguir reduciendo búsquedas desconocidas con más de 20.000 co
 La 1.3.3 añade recuperar una comparación anterior: **Y en el menú principal del overlay** o **ZL en los resultados del NRO**. Un resultado de cero se muestra como cero; no vuelve a filtrar una lista vacía ni sobrescribe la copia recuperable. Recuperar no lee ni escribe valores del juego y exige la misma sesión y datos guardados íntegros.
 
 La 1.3.4 conserva el último resultado de prueba al reabrir el overlay y separa aquel resultado del estado actual del motor y de la lectura del valor. **X** comprueba sin activar códigos y **R** muestra el informe. También corrige el texto que aparecía cortado aunque cupiera. Una lectura coincidente o un código habilitado todavía no demuestran que la dirección controle la salud.
+
+La 1.3.5 corrige el bloqueo que aparecía al pedir **Quitar mis cheats** cuando no había códigos propios que retirar. Esa operación no crea una falsa prueba fallida ni bloquea la revisión de candidatos. También distingue la referencia inicial de una búsqueda sin coincidencias, incluso cuando se muestra el resultado de una prueba anterior.
 
 ## Instalar
 
