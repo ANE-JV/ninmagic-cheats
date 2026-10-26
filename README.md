@@ -1,4 +1,4 @@
-# ninmagic-cheats 1.3.5
+# ninmagic-cheats 1.3.6
 
 NRO para Nintendo Switch con Atmosphère, interfaz en español, varios colores neón y el logo original de NinMagic dentro de la aplicación y en hbmenu. Independiente de NinMagic Cleaner.
 
@@ -14,6 +14,8 @@ La 1.3.4 conserva el último resultado de prueba al reabrir el overlay y separa 
 
 La 1.3.5 corrige el bloqueo que aparecía al pedir **Quitar mis cheats** cuando no había códigos propios que retirar. Esa operación no crea una falsa prueba fallida ni bloquea la revisión de candidatos. También distingue la referencia inicial de una búsqueda sin coincidencias, incluso cuando se muestra el resultado de una prueba anterior.
 
+La 1.3.6 incluye la memoria dinámica de tipo Heap que algunos juegos sitúan en ALIAS, fuera del intervalo HEAP habitual. Se comprueban sus permisos y la identidad del proceso antes de leerla o probar un código. Las búsquedas nuevas de puntos/barra empiezan en 8 bits; los tipos de búsquedas guardadas se conservan. Para aprovechar la cobertura ampliada hay que iniciar una búsqueda nueva; las referencias antiguas se conservan y no se reinterpretan como si incluyeran esa memoria.
+
 ## Instalar
 
 Extrae el ZIP en la raíz de la microSD, uniendo las carpetas `switch` y `config`. El NRO queda en `switch/ninmagic-cheats/ninmagic-cheats.nro` y el catálogo en `config/NinMagicCheats/`.
@@ -28,7 +30,9 @@ El catálogo conserva versiones antiguas identificadas por Title ID y Build ID; 
 
 Para los puntos blancos de salud de Terminator 2D: NO FATE, selecciona **Salud → Puntos o barra**, pulsa **Y → A** para guardar una referencia, vuelve al juego, pierde un punto y regresa por Álbum. Elige **Cambió → Y**; después muévete sin perder salud y compara **No cambió**. Repite **Cambió** tras recibir daño antes de confirmar el filtro. No se conoce de antemano si la representación interna aumenta o disminuye. La búsqueda se conserva al cerrar NinMagic si mantienes el mismo proceso del juego abierto. Al recuperarla se presenta como **Otro valor**, sin asumir que una coincidencia sea salud.
 
-Se admite búsqueda exacta y valor desconocido, con comparaciones de igual, cambió, no cambió, aumentó o disminuyó; los formatos disponibles son enteros de 8/16/32 bits y decimal de 32 bits. Se leen páginas de datos MAIN/HEAP, hasta 512 MiB, y se informa si la cobertura es parcial. Las comparaciones de una referencia desconocida pueden conservar más de 20.000 coincidencias en la microSD y seguir filtrándose. La lista se carga en RAM cuando es suficientemente pequeña.
+Se admite búsqueda exacta y valor desconocido, con comparaciones de igual, cambió, no cambió, aumentó o disminuyó; los formatos disponibles son enteros de 8/16/32 bits y decimal de 32 bits. Se leen páginas de datos MAIN/HEAP y Heap verificado en ALIAS, con permisos de lectura y escritura sin ejecución, hasta casi 4 GiB. Se indica si la cobertura es parcial. Las comparaciones grandes se guardan y filtran por bloques en la microSD; la lista se carga en RAM cuando es suficientemente pequeña.
+
+Una referencia amplia puede tardar varios minutos. Mantén la salud o el valor que buscas estable hasta que termine; para ello puedes dejar el juego en pausa. Los archivos individuales quedan por debajo del límite de FAT32. En el caso máximo, las referencias anteriores y los archivos temporales pueden necesitar unos 14 GiB libres en la microSD. No se carga toda esa memoria en RAM.
 
 La prueba exige una sola coincidencia, la lectura inicial y al menos dos comparaciones. **A** revisa; **X** permite cambiar el valor a fijar; **A** confirma la prueba experimental. Se verifica la misma sesión, Build ID y distribución de memoria. No se aplica con otros códigos activos ni con un maestro cargado. **L** retira los códigos propios registrados por NinMagic.
 
