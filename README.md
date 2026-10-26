@@ -1,10 +1,12 @@
-# ninmagic-cheats 1.3.1
+# ninmagic-cheats 1.3.2
 
 NRO para Nintendo Switch con Atmosphère, interfaz en español, varios colores neón y el logo original de NinMagic dentro de la aplicación y en hbmenu. Independiente de NinMagic Cleaner.
 
 Esta versión se centra en cheats de jugabilidad: vida, munición, dinero y otras opciones publicadas para cada juego. Se han retirado la sección de mods y las listas de ajustes FPS, resolución y gráficos. No se inventan opciones si el autor no las publicó.
 
 La actualización 1.3.1 corrige los nombres ilegibles de juegos cuando el sistema entrega metadatos NACP comprimidos. Los identificadores de juego y Build ID siguen comprobándose por separado para elegir los cheats de la versión exacta.
+
+La 1.3.2 permite seguir reduciendo búsquedas desconocidas con más de 20.000 coincidencias. Las posiciones que sobreviven se filtran desde la microSD sin cargarlas todas en RAM; no se abandona la comparación para volver a la referencia inicial.
 
 ## Instalar
 
@@ -20,13 +22,21 @@ El catálogo conserva versiones antiguas identificadas por Title ID y Build ID; 
 
 Para los puntos blancos de salud de Terminator 2D: NO FATE, selecciona **Salud → Puntos o barra**, pulsa **Y → A** para guardar una referencia, vuelve al juego, pierde un punto y regresa por Álbum. Elige **Disminuyó → Y** y repite la comparación tras otro cambio. La búsqueda se conserva al cerrar NinMagic si mantienes el mismo proceso del juego abierto. Al recuperarla se presenta como **Otro valor**, sin asumir que una coincidencia sea salud.
 
-Se admite búsqueda exacta y valor desconocido, con comparaciones de igual, cambió, no cambió, aumentó o disminuyó; los formatos disponibles son enteros de 8/16/32 bits y decimal de 32 bits. Se leen páginas de datos MAIN/HEAP, hasta 512 MiB, y se informa si la cobertura es parcial. Si se superan 20.000 coincidencias se rechaza la operación y se conserva la búsqueda anterior.
+Se admite búsqueda exacta y valor desconocido, con comparaciones de igual, cambió, no cambió, aumentó o disminuyó; los formatos disponibles son enteros de 8/16/32 bits y decimal de 32 bits. Se leen páginas de datos MAIN/HEAP, hasta 512 MiB, y se informa si la cobertura es parcial. Las comparaciones de una referencia desconocida pueden conservar más de 20.000 coincidencias en la microSD y seguir filtrándose. La lista se carga en RAM cuando es suficientemente pequeña.
 
 La prueba exige una sola coincidencia, la lectura inicial y al menos dos comparaciones. **A** revisa; **X** permite cambiar el valor a fijar; **A** confirma la prueba experimental. Se verifica la misma sesión, Build ID y distribución de memoria. No se aplica con otros códigos activos ni con un maestro cargado. **L** retira los códigos propios registrados por NinMagic.
 
 La búsqueda y sus filtros no escriben en la memoria del juego. Al confirmar el inicio, conectar el motor puede cargar los cheats que ya existan en la SD. La escritura de prueba requiere otra confirmación explícita. Una coincidencia única puede controlar algo distinto y necesita comprobarse dentro del juego. Las pruebas no se exportan como códigos portables: no se reutilizan después de reiniciar el juego. Velocidad y salto pueden necesitar estudiar instrucciones o parámetros de física; este buscador no los deduce automáticamente.
 
 Las referencias privadas y sus comprobaciones CRC se guardan en `config/NinMagicCheats/scanner/`. No se incluyen en el paquete público ni se envían a GitHub. La guía detallada se incluye como `Creador-guiado.txt`.
+
+## Complemento lateral experimental
+
+`NinMagic Creador` es un archivo `.ovl` para un cargador Tesla/Ultrahand compatible. Su primera instalación consiste en copiar `ninmagic-creator.ovl` a `switch/.overlays/`; el actualizador NRO no instala ni actualiza este archivo ni el cargador. El paquete experimental incluye su código fuente y las licencias correspondientes.
+
+Permite elegir el lado del panel, guardar una referencia, ocultarse para seguir leyendo mientras juegas y volver a comparar sin abrir Álbum. Un HUD pasivo muestra progreso y coincidencias sin usar los botones normales del juego. Ocultar mantiene su hilo; salir al menú de overlays lo cancela y espera su cierre. Necesita que indiques cambios relevantes; no identifica salud automáticamente ni activa candidatos sin confirmarlos.
+
+La guía está en `docs/overlay-guide.md`. El complemento tiene compilación y pruebas en PC; su funcionamiento, memoria disponible y compatibilidad concreta con firmware 23 aún requieren prueba real en consola. No uses simultáneamente los dos frontends de NinMagic.
 
 ## Actualizar la aplicación sin PC
 
