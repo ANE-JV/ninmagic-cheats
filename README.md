@@ -10,6 +10,10 @@ La actualización se describe en `update.txt`; los ejecutables se guardan bajo `
 
 ## Primera instalación
 
+[Descargar NRO 1.3.0](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.3.0/ninmagic-cheats.nro) · [Guía del creador](Creador-guiado.md)
+
+El canal público de actualizaciones está verificado: manifiesto y NRO se descargan sin autenticación. Después de la primera instalación, la aplicación puede comprobar nuevas versiones y pedir confirmación para instalarlas.
+
 Copia el NRO en `switch/ninmagic-cheats/ninmagic-cheats.nro`. La configuración del canal HTTPS es `config/NinMagicCheats/update-url.txt` con:
 
 ```
