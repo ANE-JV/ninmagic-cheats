@@ -1,4 +1,4 @@
-# ninmagic-cheats 1.3.7
+# ninmagic-cheats 1.3.9
 
 NRO para Nintendo Switch con Atmosphère, interfaz en español, varios colores neón y el logo original de NinMagic dentro de la aplicación y en hbmenu. Independiente de NinMagic Cleaner.
 
@@ -17,6 +17,8 @@ La 1.3.5 corrige el bloqueo que aparecía al pedir **Quitar mis cheats** cuando 
 La 1.3.6 incluye la memoria dinámica de tipo Heap que algunos juegos sitúan en ALIAS, fuera del intervalo HEAP habitual. Se comprueban sus permisos y la identidad del proceso antes de leerla o probar un código. Las búsquedas nuevas de puntos/barra empiezan en 8 bits; los tipos de búsquedas guardadas se conservan. Para aprovechar la cobertura ampliada hay que iniciar una búsqueda nueva; las referencias antiguas se conservan y no se reinterpretan como si incluyeran esa memoria.
 
 La 1.3.7 acelera el buscador general reduciendo llamadas de control repetidas y las escrituras grandes en la microSD. Las listas de candidatos dispersos se procesan desde archivos compactos; las comparaciones exactas de enteros pueden guardar una máscara y el valor buscado sin otra referencia completa. La memoria del juego, sus permisos y su identidad se siguen comprobando. Una búsqueda de la 1.3.6 puede recuperarse sin empezar de cero si mantienes el mismo juego abierto.
+
+La 1.3.9 reduce el espacio de las listas de candidatos usando posiciones relativas y el ancho real del dato. Agrupa las lecturas en ventanas reutilizables y reduce las copias de listas en RAM. Puede continuar las búsquedas guardadas de versiones anteriores dentro de la misma sesión del juego. Muestra el tiempo real transcurrido y guarda un informe local de rendimiento sin direcciones ni valores del juego; no muestra una estimación de finalización ni garantiza una duración fija.
 
 ## Instalar
 
