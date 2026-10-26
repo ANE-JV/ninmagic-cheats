@@ -1,4 +1,4 @@
-# Creador guiado de NinMagic 1.3.6
+# Creador guiado de NinMagic 1.3.7
 
 El creador compara valores de la memoria del juego. Las finalidades —salud, munición, vidas, magia/energía, kits/objetos, dinero y velocidad/salto— son etiquetas para organizar la búsqueda. No identifican automáticamente qué controla una dirección. Velocidad/salto requiere estudiar un valor numérico; no genera un parche de física.
 
@@ -22,6 +22,10 @@ La prueba sirve solo para esa sesión; no se exporta como cheat portable. Retira
 
 La pantalla informa de la cobertura parcial: se examinan páginas de datos MAIN/HEAP y páginas Heap verificadas en ALIAS con lectura y escritura sin ejecución, hasta **4 GiB menos 64 KiB**. La identidad incluye también los límites ALIAS. Las comparaciones grandes se conservan por bloques en la microSD; no se abandonan al superar 20.000 candidatos. Cada comparación usa los valores supervivientes de la lectura anterior y no reincorpora los descartados. Una operación cancelada o fallida conserva la búsqueda anterior. Un tipo de dato incorrecto o memoria no examinada puede dejar fuera el valor buscado.
 
-La primera lectura puede tardar varios minutos. En el caso máximo, las referencias y archivos temporales necesitan unos 14 GiB libres en la microSD. El límite individual es compatible con FAT32. El formato NMCSCN3 guarda la identidad ALIAS; una referencia antigua que carezca de esa identidad no se trata como una búsqueda amplia y requiere iniciar otra, conservando sus archivos hasta que decidas hacerlo.
+La primera lectura puede tardar varios minutos. En el caso máximo, las referencias y archivos temporales necesitan unos 16 GiB libres en la microSD. El límite individual es compatible con FAT32. El formato NMCSCN3 guarda la identidad ALIAS; una referencia antigua que carezca de esa identidad no se trata como una búsqueda amplia y requiere iniciar otra, conservando sus archivos hasta que decidas hacerlo.
+
+El formato NMCSCN4 de 1.3.7 conserva lectores para los formatos anteriores. Puedes continuar una referencia de 1.3.6 en el mismo proceso del juego. Los conjuntos dispersos se filtran desde una lista compacta en la SD, aunque todavía superen 20.000 candidatos. En una comparación exacta de enteros basta conservar el valor y su máscara; una coincidencia con un número visible sigue siendo una hipótesis sobre su función dentro del juego. Las comparaciones de decimales conservan sus bits reales, incluidos los ceros con signo.
+
+La primera búsqueda desconocida todavía necesita leer su cobertura completa. Después, el trabajo depende de cuántos candidatos sobrevivan y del formato guardado. La aplicación muestra **Comparación optimizada** cuando usa una representación compacta; ese texto no es una garantía de duración ni de que se haya identificado la salud.
 
 El complemento lateral experimental usa su propia carpeta `config/NinMagicCheats/scanner-overlay/`. Permite realizar las lecturas mientras el juego sigue funcionando y ocultar el panel sin detener su hilo. Cerrar el overlay sí detiene el trabajo; todavía no es un servicio independiente. El panel no deduce automáticamente qué dirección significa «vida»: hace falta indicar cambios relevantes y comprobar una prueba explícita dentro del juego.

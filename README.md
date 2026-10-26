@@ -1,4 +1,4 @@
-# ninmagic-cheats 1.3.6
+# ninmagic-cheats 1.3.7
 
 NRO para Nintendo Switch con Atmosphère, interfaz en español, varios colores neón y el logo original de NinMagic dentro de la aplicación y en hbmenu. Independiente de NinMagic Cleaner.
 
@@ -16,6 +16,8 @@ La 1.3.5 corrige el bloqueo que aparecía al pedir **Quitar mis cheats** cuando 
 
 La 1.3.6 incluye la memoria dinámica de tipo Heap que algunos juegos sitúan en ALIAS, fuera del intervalo HEAP habitual. Se comprueban sus permisos y la identidad del proceso antes de leerla o probar un código. Las búsquedas nuevas de puntos/barra empiezan en 8 bits; los tipos de búsquedas guardadas se conservan. Para aprovechar la cobertura ampliada hay que iniciar una búsqueda nueva; las referencias antiguas se conservan y no se reinterpretan como si incluyeran esa memoria.
 
+La 1.3.7 acelera el buscador general reduciendo llamadas de control repetidas y las escrituras grandes en la microSD. Las listas de candidatos dispersos se procesan desde archivos compactos; las comparaciones exactas de enteros pueden guardar una máscara y el valor buscado sin otra referencia completa. La memoria del juego, sus permisos y su identidad se siguen comprobando. Una búsqueda de la 1.3.6 puede recuperarse sin empezar de cero si mantienes el mismo juego abierto.
+
 ## Instalar
 
 Extrae el ZIP en la raíz de la microSD, uniendo las carpetas `switch` y `config`. El NRO queda en `switch/ninmagic-cheats/ninmagic-cheats.nro` y el catálogo en `config/NinMagicCheats/`.
@@ -32,7 +34,9 @@ Para los puntos blancos de salud de Terminator 2D: NO FATE, selecciona **Salud �
 
 Se admite búsqueda exacta y valor desconocido, con comparaciones de igual, cambió, no cambió, aumentó o disminuyó; los formatos disponibles son enteros de 8/16/32 bits y decimal de 32 bits. Se leen páginas de datos MAIN/HEAP y Heap verificado en ALIAS, con permisos de lectura y escritura sin ejecución, hasta casi 4 GiB. Se indica si la cobertura es parcial. Las comparaciones grandes se guardan y filtran por bloques en la microSD; la lista se carga en RAM cuando es suficientemente pequeña.
 
-Una referencia amplia puede tardar varios minutos. Mantén la salud o el valor que buscas estable hasta que termine; para ello puedes dejar el juego en pausa. Los archivos individuales quedan por debajo del límite de FAT32. En el caso máximo, las referencias anteriores y los archivos temporales pueden necesitar unos 14 GiB libres en la microSD. No se carga toda esa memoria en RAM.
+Una referencia amplia puede tardar varios minutos. Mantén la salud o el valor que buscas estable hasta que termine; para ello puedes dejar el juego en pausa. Los archivos individuales quedan por debajo del límite de FAT32. En el caso máximo, las referencias anteriores y los archivos temporales pueden necesitar unos 16 GiB libres en la microSD. No se carga toda esa memoria en RAM.
+
+El tiempo depende de la memoria, los candidatos y la microSD. La primera referencia sin número conocido sigue recorriendo toda la cobertura seleccionada. Las comparaciones posteriores usan el formato más apropiado disponible: datos completos, candidatos compactos o una máscara uniforme. La optimización no identifica automáticamente qué dirección representa la vida ni hace instantánea cualquier búsqueda.
 
 La prueba exige una sola coincidencia, la lectura inicial y al menos dos comparaciones. **A** revisa; **X** permite cambiar el valor a fijar; **A** confirma la prueba experimental. Se verifica la misma sesión, Build ID y distribución de memoria. No se aplica con otros códigos activos ni con un maestro cargado. **L** retira los códigos propios registrados por NinMagic.
 

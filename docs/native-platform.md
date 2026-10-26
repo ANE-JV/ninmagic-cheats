@@ -10,6 +10,14 @@ Referencias primarias de Atmosphère 1.12.1:
 [formato Type 0](https://github.com/Atmosphere-NX/Atmosphere/blob/1.12.1/docs/features/cheats.md#L45-L55)
 y [resolución de Alias en la VM](https://github.com/Atmosphere-NX/Atmosphere/blob/1.12.1/stratosphere/dmnt/source/cheat/impl/dmnt_cheat_vm.cpp#L745-L756).
 
+En 1.3.7, cada lectura conserva las tres consultas frescas de la identidad y
+la consulta de permisos/tipo de página. La prueba completa del cargador se
+renueva por sesión, tras 1 MiB o tras 250 ms, lo que llegue primero. Se repite
+una consulta de identidad después de esa prueba. Un fallo invalida la caché.
+Las confirmaciones de escritura experimental siguen usando la comprobación
+completa, sin esa caché. El cambio reduce llamadas; su impacto en tiempo real
+depende del juego y de la microSD.
+
 `platform.cpp` consulta los registros de NS, sus contenidos Application/Patch y
 la versión declarada en NACP. Los DLC no se confunden con actualizaciones.
 
