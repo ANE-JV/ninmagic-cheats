@@ -1,68 +1,32 @@
-# ninmagic-cheats 1.3.9
+# ninmagic-cheats 1.4.2
 
 NRO para Nintendo Switch con Atmosphère, interfaz en español, varios colores neón y el logo original de NinMagic dentro de la aplicación y en hbmenu. Independiente de NinMagic Cleaner.
 
+Descargas 1.4.2: [aplicación NRO](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.2/ninmagic-cheats.nro), [paquete del overlay](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.2/experimental/ninmagic-overlay-1.4.2-experimental.zip) y [fuentes correspondientes](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.2/experimental/ninmagic-overlay-fuentes-1.4.2.zip).
+
 Esta versión se centra en cheats de jugabilidad: vida, munición, dinero y otras opciones publicadas para cada juego. Se han retirado la sección de mods y las listas de ajustes FPS, resolución y gráficos. No se inventan opciones si el autor no las publicó.
 
-La actualización 1.3.1 corrige los nombres ilegibles de juegos cuando el sistema entrega metadatos NACP comprimidos. Los identificadores de juego y Build ID siguen comprobándose por separado para elegir los cheats de la versión exacta.
+Si no hay cheats publicados compatibles con el Title ID y Build ID comprobados, la aplicación lo indica. Puedes actualizar el catálogo o importar códigos publicados para esa versión. No utiliza códigos de otra versión ni crea opciones mediante búsquedas de memoria.
 
-La 1.3.2 permite seguir reduciendo búsquedas desconocidas con más de 20.000 coincidencias. Las posiciones que sobreviven se filtran desde la microSD sin cargarlas todas en RAM; no se abandona la comparación para volver a la referencia inicial.
-
-La 1.3.3 añade recuperar una comparación anterior: **Y en el menú principal del overlay** o **ZL en los resultados del NRO**. Un resultado de cero se muestra como cero; no vuelve a filtrar una lista vacía ni sobrescribe la copia recuperable. Recuperar no lee ni escribe valores del juego y exige la misma sesión y datos guardados íntegros.
-
-La 1.3.4 conserva el último resultado de prueba al reabrir el overlay y separa aquel resultado del estado actual del motor y de la lectura del valor. **X** comprueba sin activar códigos y **R** muestra el informe. También corrige el texto que aparecía cortado aunque cupiera. Una lectura coincidente o un código habilitado todavía no demuestran que la dirección controle la salud.
-
-La 1.3.5 corrige el bloqueo que aparecía al pedir **Quitar mis cheats** cuando no había códigos propios que retirar. Esa operación no crea una falsa prueba fallida ni bloquea la revisión de candidatos. También distingue la referencia inicial de una búsqueda sin coincidencias, incluso cuando se muestra el resultado de una prueba anterior.
-
-La 1.3.6 incluye la memoria dinámica de tipo Heap que algunos juegos sitúan en ALIAS, fuera del intervalo HEAP habitual. Se comprueban sus permisos y la identidad del proceso antes de leerla o probar un código. Las búsquedas nuevas de puntos/barra empiezan en 8 bits; los tipos de búsquedas guardadas se conservan. Para aprovechar la cobertura ampliada hay que iniciar una búsqueda nueva; las referencias antiguas se conservan y no se reinterpretan como si incluyeran esa memoria.
-
-La 1.3.7 acelera el buscador general reduciendo llamadas de control repetidas y las escrituras grandes en la microSD. Las listas de candidatos dispersos se procesan desde archivos compactos; las comparaciones exactas de enteros pueden guardar una máscara y el valor buscado sin otra referencia completa. La memoria del juego, sus permisos y su identidad se siguen comprobando. Una búsqueda de la 1.3.6 puede recuperarse sin empezar de cero si mantienes el mismo juego abierto.
-
-La 1.3.9 reduce el espacio de las listas de candidatos usando posiciones relativas y el ancho real del dato. Agrupa las lecturas en ventanas reutilizables y reduce las copias de listas en RAM. Puede continuar las búsquedas guardadas de versiones anteriores dentro de la misma sesión del juego. Muestra el tiempo real transcurrido y guarda un informe local de rendimiento sin direcciones ni valores del juego; no muestra una estimación de finalización ni garantiza una duración fija.
+El creador de códigos se ha retirado del paquete actual. El overlay permite seleccionar y aplicar cheats publicados. Los paquetes históricos mantienen sus fuentes y licencias. La aplicación no elimina juegos ni partidas guardadas.
 
 ## Instalar
 
 Extrae el ZIP en la raíz de la microSD, uniendo las carpetas `switch` y `config`. El NRO queda en `switch/ninmagic-cheats/ninmagic-cheats.nro` y el catálogo en `config/NinMagicCheats/`.
 
-La base incluida funciona sin conexión. Al abrir la aplicación con Internet se comprueban las fuentes de cheats para añadir publicaciones nuevas. También puedes pulsar **Y en la biblioteca** para actualizar manualmente. Si falla Internet o la descarga no se verifica, se conserva el catálogo anterior. La aplicación debe estar abierta para comprobar novedades.
+La base incluida funciona sin conexión. Al abrir la aplicación con Internet se comprueban las publicaciones nuevas del catálogo principal. Al seleccionar un juego se consultan también los proveedores adicionales por su Title ID y Build ID exactos; las comprobaciones recientes se reutilizan durante seis horas. También puedes actualizar manualmente. Si falla Internet o la descarga no se verifica, se conservan los códigos guardados y se indica qué fuente no pudo comprobarse.
 
 El catálogo conserva versiones antiguas identificadas por Title ID y Build ID; una actualización no borra esos códigos históricos. Tener códigos de varios años no significa que existan para todos los juegos o todas sus versiones.
 
-## Crear una prueba cuando no hay cheats
-
-**ZR: Crear** abre un buscador guiado, también para juegos sin códigos publicados. Pregunta qué quieres buscar (salud, munición, vidas, magia/energía, kits/objetos, dinero, velocidad/salto u otro valor) y si aparece como número o puntos/barra. La finalidad es una etiqueta; no identifica por sí sola lo que significa una dirección.
-
-Para los puntos blancos de salud de Terminator 2D: NO FATE, selecciona **Salud → Puntos o barra**, pulsa **Y → A** para guardar una referencia, vuelve al juego, pierde un punto y regresa por Álbum. Elige **Cambió → Y**; después muévete sin perder salud y compara **No cambió**. Repite **Cambió** tras recibir daño antes de confirmar el filtro. No se conoce de antemano si la representación interna aumenta o disminuye. La búsqueda se conserva al cerrar NinMagic si mantienes el mismo proceso del juego abierto. Al recuperarla se presenta como **Otro valor**, sin asumir que una coincidencia sea salud.
-
-Se admite búsqueda exacta y valor desconocido, con comparaciones de igual, cambió, no cambió, aumentó o disminuyó; los formatos disponibles son enteros de 8/16/32 bits y decimal de 32 bits. Se leen páginas de datos MAIN/HEAP y Heap verificado en ALIAS, con permisos de lectura y escritura sin ejecución, hasta casi 4 GiB. Se indica si la cobertura es parcial. Las comparaciones grandes se guardan y filtran por bloques en la microSD; la lista se carga en RAM cuando es suficientemente pequeña.
-
-Una referencia amplia puede tardar varios minutos. Mantén la salud o el valor que buscas estable hasta que termine; para ello puedes dejar el juego en pausa. Los archivos individuales quedan por debajo del límite de FAT32. En el caso máximo, las referencias anteriores y los archivos temporales pueden necesitar unos 16 GiB libres en la microSD. No se carga toda esa memoria en RAM.
-
-El tiempo depende de la memoria, los candidatos y la microSD. La primera referencia sin número conocido sigue recorriendo toda la cobertura seleccionada. Las comparaciones posteriores usan el formato más apropiado disponible: datos completos, candidatos compactos o una máscara uniforme. La optimización no identifica automáticamente qué dirección representa la vida ni hace instantánea cualquier búsqueda.
-
-La prueba exige una sola coincidencia, la lectura inicial y al menos dos comparaciones. **A** revisa; **X** permite cambiar el valor a fijar; **A** confirma la prueba experimental. Se verifica la misma sesión, Build ID y distribución de memoria. No se aplica con otros códigos activos ni con un maestro cargado. **L** retira los códigos propios registrados por NinMagic.
-
-La búsqueda y sus filtros no escriben en la memoria del juego. Al confirmar el inicio, conectar el motor puede cargar los cheats que ya existan en la SD. La escritura de prueba requiere otra confirmación explícita. Una coincidencia única puede controlar algo distinto y necesita comprobarse dentro del juego. Las pruebas no se exportan como códigos portables: no se reutilizan después de reiniciar el juego. Velocidad y salto pueden necesitar estudiar instrucciones o parámetros de física; este buscador no los deduce automáticamente.
-
-Las referencias privadas y sus comprobaciones CRC se guardan en `config/NinMagicCheats/scanner/`. No se incluyen en el paquete público ni se envían a GitHub. La guía detallada se incluye como `Creador-guiado.txt`.
-
-## Complemento lateral experimental
-
-`NinMagic Creador` es un archivo `.ovl` para un cargador Tesla/Ultrahand compatible. Su primera instalación consiste en copiar `ninmagic-creator.ovl` a `switch/.overlays/`; el actualizador NRO no instala ni actualiza este archivo ni el cargador. El paquete experimental incluye su código fuente y las licencias correspondientes.
-
-Permite elegir el lado del panel, guardar una referencia, ocultarse para seguir leyendo mientras juegas y volver a comparar sin abrir Álbum. Un HUD pasivo muestra progreso y coincidencias sin usar los botones normales del juego. Ocultar mantiene su hilo; salir al menú de overlays lo cancela y espera su cierre. Necesita que indiques cambios relevantes; no identifica salud automáticamente ni activa candidatos sin confirmarlos.
-
-La guía está en `docs/overlay-guide.md`. El complemento tiene compilación y pruebas en PC; su funcionamiento, memoria disponible y compatibilidad concreta con firmware 23 aún requieren prueba real en consola. No uses simultáneamente los dos frontends de NinMagic.
-
 ## Importación local de cheats publicados
 
-El archivo opcional `config/NinMagicCheats/manual-cheats.zip` permite incorporar una copia local de códigos publicados sin cambiar las fuentes automáticas ni los catálogos oficiales. Usa entradas `<TITLEID>/cheats/<BUILDID>.txt`; se comprueban límites, CRC y sintaxis antes de añadirlas como **Importacion local**. Un archivo inválido se omite con un aviso y no invalida la caché oficial. Copiar este ZIP no instala ni activa códigos en Atmosphère: hay que seleccionarlos y confirmar en la aplicación, con el Build ID exacto comprobado.
+El archivo opcional `config/NinMagicCheats/manual-cheats.zip` permite incorporar una copia local de códigos publicados sin cambiar las fuentes automáticas ni los catálogos oficiales. Usa entradas `contents/<TITLEID>/cheats/<BUILDID>.txt`; se comprueban límites, CRC y sintaxis antes de añadirlas como **Importacion local**. Un archivo inválido se omite con un aviso y no invalida la caché oficial. Copiar este ZIP no instala ni activa códigos en Atmosphère: hay que seleccionarlos y confirmar en la aplicación, con el Build ID exacto comprobado.
 
 Las importaciones personales no se incluyen en el paquete público de NinMagic. Conserva la fuente y los créditos del autor. Que un código esté publicado y coincida con el Build ID no sustituye una prueba de su efecto en el juego.
 
 ## Actualizar la aplicación sin PC
 
-**Y en la biblioteca** actualiza el catálogo de cheats. **L: Actualizar app** consulta una versión nueva del propio NRO; también se comprueba al abrir, salvo al recuperar una búsqueda en curso.
+**Y en la biblioteca** actualiza el catálogo de cheats. **L: Actualizar app** consulta una versión nueva del propio NRO; también se comprueba al abrir.
 
 El canal público es independiente de la página web: `ANE-JV/ninmagic-cheats` en GitHub. Su configuración es `config/NinMagicCheats/update-url.txt`. El manifiesto y cada NRO se descargan por HTTPS sin credenciales y se exige que coincidan su versión, tamaño y SHA-256. La página web y sus paquetes no forman parte de este proyecto.
 
@@ -84,6 +48,12 @@ Con el juego cerrado, instala los códigos seleccionados para el siguiente inici
 
 Los códigos de botón mantienen sus condiciones originales. En Zelda Link's Awakening, el código «9999 Rupees Press L» requiere L y «Infinite / Max Hearts Press ZR» requiere ZR. No se convierten en códigos permanentes cambiando instrucciones del autor.
 
+## Seleccionar desde el overlay
+
+Con el juego abierto, entra en **NinMagic Cheats** desde tu menú de overlays y pulsa **X: Buscar online**. Consulta las fuentes admitidas para el Title ID y Build ID reales de ese juego; no necesitas abrir antes el NRO. Buscar sólo descarga y prepara opciones. Marca con **A**, revisa con **Y** y confirma para aplicarlas. Los controles y requisitos de Tesla están en `Overlay-publicados.txt`.
+
+Al abrir el overlay carga primero su copia local exacta y no activa nada. **X** vuelve a comprobar las fuentes por Internet; durante la consulta puedes seguir jugando con **B** o cancelarla con **X**. Si falla una fuente se conserva la copia comprobada. Una consulta completa sin opciones compatibles puede guardar una lista vacía. Las listas que superan los límites del overlay se gestionan desde el NRO. El overlay no recupera códigos de otra versión ni del antiguo creador.
+
 ## Retirar
 
 En la lista de cheats pulsa **L → A**. Con el juego abierto retira los códigos que NinMagic activó en ese proceso. Con el juego cerrado deshace la última instalación de archivos y recupera su copia anterior.
@@ -102,16 +72,24 @@ Se comprueban el formato, los maestros, los conflictos estáticos detectables y 
 
 **Ningún catálogo externo permite garantizar al 100 % el efecto de un cheat ni que el juego nunca se cierre.** La aplicación confirma identificadores y estado del motor; no presenta eso como una prueba del efecto dentro del juego.
 
-Esta versión corrige que las casillas aparecieran vacías al reabrir. La causa de que el efecto dejara de funcionar en Zelda todavía necesita comprobarse en la consola. Para poder revisarla, guarda un diagnóstico limitado en `config/NinMagicCheats/diagnostico-cheats.txt` al consultar, aplicar, retirar y salir. Contiene identificadores, nombres y estado del motor; no lee la memoria de la partida.
+La aplicación guarda un diagnóstico limitado en `config/NinMagicCheats/diagnostico-cheats.txt` al consultar, aplicar, retirar y salir. Contiene identificadores, nombres y estado del motor; no lee la memoria de la partida.
 
 ## Fuentes y servidor propio
 
-Se conservan las dos fuentes originales de códigos de cheats:
+Se utilizan estas fuentes de cheats publicados:
 
 - [HamletDuFromage/switch-cheats-db](https://github.com/HamletDuFromage/switch-cheats-db/releases).
-- [ChanseyIsTheBest/NX-60FPS-RES-GFX-Cheats](https://github.com/ChanseyIsTheBest/NX-60FPS-RES-GFX-Cheats/blob/main/GAMES.md).
+- [Tomvita/NXCheatCode](https://github.com/tomvita/NXCheatCode): catálogo publicado `titles.zip`, compilado a partir de aportaciones de GBATemp.
+- [sthetix/nx-cheats-db](https://github.com/sthetix/nx-cheats-db): catálogo general `contents_complete.zip`, consultado tanto por el NRO como por el overlay.
+- [Tomvita/MyNXCheats](https://github.com/tomvita/MyNXCheats): archivo canónico publicado como `<TID>/<BID>.txt` en los lanzamientos del autor.
+- [ibnux/switch-cheat](https://github.com/ibnux/switch-cheat): fuente histórica, con archivos por Title ID y Build ID.
+- [OldManKain/Switch-Cheats-Mods-Saves](https://github.com/OldManKain/Switch-Cheats-Mods-Saves): se consultan sólo sus archivos de cheats por Title ID/Build ID; no se descargan mods ni partidas.
+- [sthetix/nx-cheats-db](https://github.com/sthetix/nx-cheats-db): archivo publicado `contents_complete.zip`, que amplía las versiones disponibles, incluida Mario Wonder con Build ID `FF773E90972D544E`.
+- [OldManKain/Switch-Cheats-Mods-Saves](https://github.com/OldManKain/Switch-Cheats-Mods-Saves): consulta exclusivamente sus archivos de cheats por TID y BID. Es una fuente histórica; no se descargan sus mods ni partidas.
 
-Los ajustes visuales se filtran de las opciones disponibles en esta aplicación. Las URLs e índices exclusivos de mods se han retirado del ejecutable y del paquete nuevo. Los créditos de los autores se conservan dentro de los códigos.
+La fuente específica de FPS, resolución y gráficos se ha retirado de las consultas. Los ajustes visuales que aparezcan en una base general también se filtran de las opciones disponibles. Los códigos idénticos con los mismos maestros se muestran una vez, conservando sus orígenes. Las variantes con maestros distintos permanecen separadas.
+
+[CheatSlips](https://www.cheatslips.com/homebrews/aio-switch-updater) exige una cuenta y un token personal para su API; no se presenta como una integración automática. Los códigos obtenidos legalmente pueden incorporarse mediante importación local. GBATemp se utiliza a través del catálogo publicado NXCheatCode; no se rastrean sus páginas ni se eluden sus protecciones.
 
 No hace falta un servidor propio. Para usar uno HTTPS, consulta `Servidor-propio.txt` incluido en la carpeta de la aplicación.
 
