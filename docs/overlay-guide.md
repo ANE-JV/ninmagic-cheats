@@ -18,8 +18,20 @@ El informe de aplicación o retirada se muestra al terminar. Conserva los botone
 
 La lista guardada permite volver a consultar los cheats aunque no haya conexión. Si una actualización online falla y existe una copia válida del mismo juego y Build ID, se conserva como alternativa; revisa el aviso que aparece en pantalla. La lista no se adapta a otra actualización del juego. Si no se encuentran cheats publicados compatibles con esa versión, puedes repetir la consulta con X.
 
+**Consulta incompleta** significa que no se pudieron comprobar todas las fuentes. Un error de conexión no demuestra que falten cheats; las opciones guardadas válidas siguen disponibles. **Sin cheats compatibles** sólo se muestra después de una consulta completa, guardada y verificada. Una lista local vacía sin esa comprobación aparece como **Sin comprobar**.
+
+La 1.4.4 registra el servidor, la etapa y el código de error de conexión en `config/NinMagicCheats/published-sources/last-query.txt`. Ese diagnóstico no incluye rutas de descarga firmadas ni datos de la partida. La causa concreta de una conexión fallida depende del resultado registrado; la coincidencia de identificadores no demuestra el efecto de un código.
+
+**Consulta incompleta** significa que no se pudo comprobar la disponibilidad en todas las fuentes; no significa que falten cheats. Una lista guardada vacía tampoco confirma esa ausencia. Sólo una consulta completa sin resultados muestra **Sin cheats compatibles**. Pulsa X para reintentar cuando haya conexión.
+
 Si no se pudo verificar el Build ID, se muestra **Build ID sin comprobar** y el error de la comprobación. Eso todavía no determina si hay cheats compatibles. X permite reintentar la consulta del juego.
 
 La aplicación NRO es opcional para importar `config/NinMagicCheats/manual-cheats.zip` y gestionar listas demasiado grandes para la memoria del overlay. Selecciona el juego y entra a sus cheats desde la aplicación para preparar esa copia local. Después regresa al overlay; al abrirse comprueba la lista guardada. La consulta online directa no requiere este paso.
 
 La aplicación y el overlay comparten el recibo de retirada. Usa un solo frontend de NinMagic cada vez. Cerrar el overlay espera a que termine su hilo de trabajo antes de descargar el código. El logo es el mismo original de la aplicación; las vistas del PC son ejemplos de interfaz, no pruebas de ejecución en hardware.
+
+## Códigos en revisión y versiones
+
+La aplicación compara el Title ID y el Build ID reales antes de aplicar. Si no coinciden, se rechaza la asignación. En la aplicación NRO, una consulta completa sin códigos puede mostrar otros Build ID publicados para ese mismo juego. No se infiere una versión numérica si la fuente no la identifica.
+
+Los once códigos de la lista reportada de Mario Wonder FF773E90972D544E quedan en revisión por huella exacta. También aparecen publicados para CD6E42AEE7934F4D (1.0.0 según la fuente). No se permite volver a marcarlos ni aplicarlos en FF77, incluso desde cachés antiguas o con otro nombre. Si ya figuraban ON se conserva ese estado visible; bloquear una nueva activación no retira por sí solo lo que estuviera cargado. L → A permite retirar los códigos registrados por NinMagic.

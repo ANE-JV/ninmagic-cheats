@@ -2,6 +2,10 @@
 
 NinMagic exige Title ID y Build ID exactos. No elige otra versión por parecido del nombre. La selección se limita a cheats de jugabilidad; no hay un proveedor activo de mods, FPS, resolución o gráficos. La coincidencia de identificadores y formato no demuestra el efecto del código dentro del juego.
 
+La 1.4.4 añade una revisión por huella SHA-256 de las once definiciones de Wonder FF773E90972D544E que coincidían con las publicadas para CD6E42AEE7934F4D y dieron lugar a un cierre reportado. Permanecen visibles con el motivo y la referencia 1.0.0 según la fuente, pero se rechazan antes de activar o instalar, incluso desde una caché antigua. No se cambian sus instrucciones ni sus identificadores para intentar hacerlas funcionar. La revisión no declara defectuosos todos los códigos de una fuente ni todos los juegos.
+
+Cuando una consulta completa no encuentra opciones para el BID actual, la aplicación NRO puede mostrar otros Build ID publicados para el mismo Title ID. No convierte esos identificadores en versiones numéricas sin información explícita de la fuente. NIFM se utiliza como diagnóstico; la consulta real sigue exigiendo una respuesta HTTPS verificada del servidor.
+
 ## Proveedores automáticos
 
 | Fuente primaria | Consulta | Alcance |

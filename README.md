@@ -1,8 +1,10 @@
-# ninmagic-cheats 1.4.2
+# ninmagic-cheats 1.4.4
 
 NRO para Nintendo Switch con Atmosphère, interfaz en español, varios colores neón y el logo original de NinMagic dentro de la aplicación y en hbmenu. Independiente de NinMagic Cleaner.
 
-Descargas 1.4.2: [aplicación NRO](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.2/ninmagic-cheats.nro), [paquete del overlay](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.2/experimental/ninmagic-overlay-1.4.2-experimental.zip) y [fuentes correspondientes](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.2/experimental/ninmagic-overlay-fuentes-1.4.2.zip).
+La 1.4.4 bloquea por huella los once códigos de Wonder FF773E90972D544E en revisión tras un cierre reportado y su coincidencia con códigos publicados para CD6E42AEE7934F4D. No se activan ni se instalan, aunque aparezcan en una caché antigua o cambien sus nombres. La referencia 1.0.0 procede de la fuente y no certifica un efecto en el juego.
+
+Descargas 1.4.4: [aplicación NRO](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.4/ninmagic-cheats.nro), [paquete del overlay](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.4/experimental/ninmagic-overlay-1.4.4-experimental.zip) y [fuentes correspondientes](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.4/experimental/ninmagic-overlay-fuentes-1.4.4.zip).
 
 Esta versión se centra en cheats de jugabilidad: vida, munición, dinero y otras opciones publicadas para cada juego. Se han retirado la sección de mods y las listas de ajustes FPS, resolución y gráficos. No se inventan opciones si el autor no las publicó.
 
@@ -84,7 +86,7 @@ Se utilizan estas fuentes de cheats publicados:
 - [Tomvita/MyNXCheats](https://github.com/tomvita/MyNXCheats): archivo canónico publicado como `<TID>/<BID>.txt` en los lanzamientos del autor.
 - [ibnux/switch-cheat](https://github.com/ibnux/switch-cheat): fuente histórica, con archivos por Title ID y Build ID.
 - [OldManKain/Switch-Cheats-Mods-Saves](https://github.com/OldManKain/Switch-Cheats-Mods-Saves): se consultan sólo sus archivos de cheats por Title ID/Build ID; no se descargan mods ni partidas.
-- [sthetix/nx-cheats-db](https://github.com/sthetix/nx-cheats-db): archivo publicado `contents_complete.zip`, que amplía las versiones disponibles, incluida Mario Wonder con Build ID `FF773E90972D544E`.
+- [sthetix/nx-cheats-db](https://github.com/sthetix/nx-cheats-db): archivo publicado `contents_complete.zip`. La lista reportada para Mario Wonder `FF773E90972D544E` queda en revisión y bloqueada; que una fuente la etiquete con ese BID no demuestra su compatibilidad.
 - [OldManKain/Switch-Cheats-Mods-Saves](https://github.com/OldManKain/Switch-Cheats-Mods-Saves): consulta exclusivamente sus archivos de cheats por TID y BID. Es una fuente histórica; no se descargan sus mods ni partidas.
 
 La fuente específica de FPS, resolución y gráficos se ha retirado de las consultas. Los ajustes visuales que aparezcan en una base general también se filtran de las opciones disponibles. Los códigos idénticos con los mismos maestros se muestran una vez, conservando sus orígenes. Las variantes con maestros distintos permanecen separadas.
