@@ -1,5 +1,5 @@
 NINMAGIC-UPDATE-1
-version=1.4.5
-url=https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.5/ninmagic-cheats.nro
-sha256=18f57d7d95d7681c1c6ca556213dcfe31bc5f94bafcded709765d30cf93aeee5
-size=2333429
+version=1.4.6
+url=https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.6/ninmagic-cheats.nro
+sha256=02dece071f4e54bcd4bcad81e50d99b66dbcac054b4da25052a4a4122dd80592
+size=2366197

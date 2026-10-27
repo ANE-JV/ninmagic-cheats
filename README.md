@@ -1,10 +1,12 @@
-# ninmagic-cheats 1.4.5
+# ninmagic-cheats 1.4.6
 
 NRO para Nintendo Switch con Atmosphère, interfaz en español, varios colores neón y el logo original de NinMagic dentro de la aplicación y en hbmenu. Independiente de NinMagic Cleaner.
 
+La 1.4.6 corrige los registros antiguos que podían bloquear el actualizador después de instalar un NRO desde otro ZIP. Una operación terminada deja de tratarse como pendiente. Si quedan registros heredados, se ofrece revisarlos y archivarlos con confirmación, conservando el ejecutable y sus copias de seguridad. Un estado pendiente o ambiguo sigue bloqueado para su revisión.
+
 La 1.4.5 añade el catálogo de Arch9SK7 y una selección de archivos independientes de bad1dea, además de opciones publicadas por OblivionReign para Mario Wonder 1.2.1, Title ID `010015100B514000`, Build ID `FF773E90972D544E`. La coincidencia de versión declarada no certifica su efecto en la consola. Se conserva el bloqueo por huella de los once códigos anteriores de Wonder en revisión.
 
-Descargas 1.4.5: [paquete completo para microSD](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.5/ninmagic-cheats-1.4.5.zip), [aplicación NRO](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.5/ninmagic-cheats.nro), [paquete del overlay](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.5/experimental/ninmagic-overlay-1.4.5-experimental.zip) y [fuentes correspondientes](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.5/experimental/ninmagic-overlay-fuentes-1.4.5.zip).
+Descargas 1.4.6: [paquete completo para microSD](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.6/ninmagic-cheats-1.4.6.zip), [aplicación NRO](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.6/ninmagic-cheats.nro), [paquete del overlay](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.6/experimental/ninmagic-overlay-1.4.6-experimental.zip) y [fuentes correspondientes](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.6/experimental/ninmagic-overlay-fuentes-1.4.6.zip).
 
 Esta versión se centra en cheats de jugabilidad: vida, munición, dinero y otras opciones publicadas para cada juego. Se han retirado la sección de mods y las listas de ajustes FPS, resolución y gráficos. No se inventan opciones si el autor no las publicó.
 
@@ -35,6 +37,8 @@ El canal público es independiente de la página web: `ANE-JV/ninmagic-cheats` e
 Cuando se publique una versión posterior, **A: Descargar e instalar** autoriza su instalación. Se comprueban HTTPS, tamaño, SHA-256, estructura del NRO, nombre y versión NACP antes de reemplazarlo. Se conserva una copia numerada en `config/NinMagicCheats/app-update/`. Después cierra y vuelve a abrir NinMagic. Desde la versión 1.3.0 puedes recibir esta actualización dentro de la aplicación; una primera instalación requiere copiar el paquete a la consola.
 
 El actualizador utiliza la ubicación estándar `switch/ninmagic-cheats/ninmagic-cheats.nro`. Durante un reemplazo interrumpido puede quedar un NRO de recuperación ejecutable en esa misma carpeta; al abrirlo se intenta recuperar la ruta estándar a partir de su copia verificada. No apagues ni retires la microSD durante la instalación.
+
+Si aparece un **registro antiguo terminado**, revisa los datos que muestra la pantalla y confirma su archivo desde la aplicación. La acción sólo archiva los registros de texto comprobados; conserva los NRO y sus backups. Después vuelve a comprobar la versión. Si la pantalla distingue una versión en ejecución de otra ya instalada en la SD, cierra y vuelve a abrir NinMagic antes de intentar otra descarga.
 
 ## Aplicar fácilmente
 
