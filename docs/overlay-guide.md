@@ -1,5 +1,7 @@
 # NinMagic Cheats sobre el juego
 
+La 1.4.5 añade las fuentes Arch9SK7, la selección revisada de bad1dea y las opciones de OblivionReign para Mario Wonder FF773E90972D544E. Se consultan también desde **X**, sin abrir antes el NRO. Los archivos ya verificados se reutilizan seis horas salvo actualización forzada. [Procedencia y retirada de las opciones de Wonder](wonder-1.2.1.md).
+
 El complemento `ninmagic-cheats.ovl` se coloca en `sdmc:/switch/.overlays/`. Requiere Tesla o Ultrahand y un `nx-ovlloader` compatible ya instalado. La aplicación no instala ni cambia ese loader. La combinación que tengas configurada para abrir los overlays se conserva; la predeterminada de libtesla es **L + abajo de la cruceta + pulsar el stick derecho**.
 
 1. Abre el juego real y después **NinMagic Cheats** desde el menú de overlays, manteniendo el juego abierto.
@@ -21,8 +23,6 @@ La lista guardada permite volver a consultar los cheats aunque no haya conexión
 **Consulta incompleta** significa que no se pudieron comprobar todas las fuentes. Un error de conexión no demuestra que falten cheats; las opciones guardadas válidas siguen disponibles. **Sin cheats compatibles** sólo se muestra después de una consulta completa, guardada y verificada. Una lista local vacía sin esa comprobación aparece como **Sin comprobar**.
 
 La 1.4.4 registra el servidor, la etapa y el código de error de conexión en `config/NinMagicCheats/published-sources/last-query.txt`. Ese diagnóstico no incluye rutas de descarga firmadas ni datos de la partida. La causa concreta de una conexión fallida depende del resultado registrado; la coincidencia de identificadores no demuestra el efecto de un código.
-
-**Consulta incompleta** significa que no se pudo comprobar la disponibilidad en todas las fuentes; no significa que falten cheats. Una lista guardada vacía tampoco confirma esa ausencia. Sólo una consulta completa sin resultados muestra **Sin cheats compatibles**. Pulsa X para reintentar cuando haya conexión.
 
 Si no se pudo verificar el Build ID, se muestra **Build ID sin comprobar** y el error de la comprobación. Eso todavía no determina si hay cheats compatibles. X permite reintentar la consulta del juego.
 

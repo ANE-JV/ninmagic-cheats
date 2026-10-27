@@ -6,6 +6,8 @@ La 1.4.4 añade una revisión por huella SHA-256 de las once definiciones de Won
 
 Cuando una consulta completa no encuentra opciones para el BID actual, la aplicación NRO puede mostrar otros Build ID publicados para el mismo Title ID. No convierte esos identificadores en versiones numéricas sin información explícita de la fuente. NIFM se utiliza como diagnóstico; la consulta real sigue exigiendo una respuesta HTTPS verificada del servidor.
 
+La 1.4.5 amplía las fuentes con Arch9SK7, una selección independiente de bad1dea y dos opciones de OblivionReign para el Build ID exacto de Mario Wonder. Mantiene los identificadores estrictos, la cuarentena por huella y las copias anteriores ante fallos de red o archivos no válidos.
+
 ## Proveedores automáticos
 
 | Fuente primaria | Consulta | Alcance |
@@ -16,6 +18,10 @@ Cuando una consulta completa no encuentra opciones para el BID actual, la aplica
 | [Tomvita/MyNXCheats](https://github.com/tomvita/MyNXCheats) | Asset canónico `<BID>.txt` del lanzamiento cuyo tag es `<TID>` | Consulta directa del juego. No se descarga el repositorio completo ni se infiere el TID por nombre. Tags con otros nombres y variantes `.v1`, `.v2`… no se seleccionan automáticamente. |
 | [ibnux/switch-cheat](https://github.com/ibnux/switch-cheat) | `atmosphere/titles/<TID>/cheats/<bid>.txt` | Fuente histórica. Última modificación comprobada el 26 de octubre de 2026: 26 de abril de 2024. No se anuncia como reciente. |
 | [OldManKain/Switch-Cheats-Mods-Saves](https://github.com/OldManKain/Switch-Cheats-Mods-Saves) | Exclusivamente `Titles/<TID>/cheats/<BID>.txt` | Fuente histórica, modificada por última vez el 21 de octubre de 2024. Tras un HTTP404 se prueba únicamente el mismo BID en minúsculas. No se descargan su repositorio, mods, partidas ni imágenes. |
+| [Arch9SK7/MyNXCheats](https://github.com/Arch9SK7/MyNXCheats) | ZIP de la rama `main`, perfil de rutas exclusivo del autor | Consulta del miembro con TID/BID exactos, caché seis horas y anterior. Rechaza dependencias IPS/IPS32/PCHTXT/7z y carpetas de parches. No se extraen ni instalan archivos del repositorio. |
+| [bad1dea/NXCheats](https://github.com/bad1dea/NXCheats) | 22 rutas RAW fijadas al commit `54fc9698d30291e1a785706f6cbc121667fbd02f` | Selección de 20 juegos con archivos independientes revisados. Sólo se consulta si TID/BID figuran en la tabla; sin repo completo, variantes inferidas ni IPS. La tabla cambia con una nueva versión de NinMagic. Créditos y MIT conservados. |
+| [OblivionReign/GBATemp](https://gbatemp.net/posts/10902179/) | TXT de selección documentada alojado en el repositorio de NinMagic | Exclusivamente `010015100B514000 / FF773E90972D544E`, versión 1.2.1 según el autor. No se rastrea el foro en la consola ni se declara probado su efecto. [Guía y procedencia](wonder-1.2.1.md). |
+
 
 Direcciones utilizadas, sustituyendo los campos entre ángulos por los identificadores reales:
 
@@ -27,6 +33,9 @@ https://github.com/sthetix/nx-cheats-db/releases/latest/download/contents_comple
 https://github.com/tomvita/MyNXCheats/releases/download/<TID>/<BID>.txt
 https://raw.githubusercontent.com/ibnux/switch-cheat/master/atmosphere/titles/<TID>/cheats/<bid>.txt
 https://raw.githubusercontent.com/OldManKain/Switch-Cheats-Mods-Saves/main/Titles/<TID>/cheats/<BID>.txt
+https://codeload.github.com/Arch9SK7/MyNXCheats/zip/refs/heads/main
+https://raw.githubusercontent.com/bad1dea/NXCheats/54fc9698d30291e1a785706f6cbc121667fbd02f/<ruta-verificada-exacta>
+https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/catalog/oblivionreign/contents/010015100B514000/cheats/FF773E90972D544E.txt
 ```
 
 Los códigos pertenecen a sus autores. Se conservan nombres, condiciones y palabras originales. Opciones con instrucciones idénticas y maestros equivalentes se reúnen conservando sus orígenes; maestros distintos mantienen las opciones separadas. Las descargas adicionales son caché personal y no se incorporan automáticamente a los paquetes públicos del proyecto.
@@ -41,7 +50,7 @@ Cada fuente distingue comprobación por Internet, copia local y archivo exacto e
 
 Los registros de frescura y ETag pertenecen a su archivo vigente. Si éste está dañado o falta y sólo puede recuperarse `.previous`, se descarga una copia nueva para completar la comprobación; no se usan los validadores del archivo perdido para dar por actualizada otra copia anterior.
 
-La caché adicional está en `sdmc:/config/NinMagicCheats/published-sources/`. Los textos se vinculan a proveedor, URL, TID y BID y llevan CRC. Se comprueba la sintaxis antes de sustituir la copia vigente y se conserva una anterior. El NRO valida y combina los catálogos completos para conservar BID históricos. El overlay comprueba los encabezados del ZIP y el CRC y sintaxis del miembro solicitado, sin descomprimir los demás; conserva los códigos ya consultados en archivos por juego y Build ID. No se extraen rutas del ZIP.
+La caché adicional está en `sdmc:/config/NinMagicCheats/published-sources/`. Los textos se vinculan a proveedor, URL, TID y BID y llevan CRC. Se comprueba la sintaxis antes de sustituir la copia vigente y se conserva una anterior. El NRO valida y combina los catálogos de Hamlet, NXCheatCode y Sthetix para conservar BID históricos. Arch9SK7 mantiene el ZIP original vigente, una copia anterior y la caché del juego consultado; no se mezcla en ese histórico. El overlay comprueba los encabezados del ZIP y el CRC y sintaxis del miembro solicitado, sin descomprimir los demás; conserva los códigos ya consultados en archivos por juego y Build ID. No se extraen rutas del ZIP.
 
 El overlay permite una consulta directa con **X: Buscar online** sin abrir previamente el NRO. Comprueba el juego abierto y consulta sus rutas exactas en las mismas fuentes. No carga el índice completo del catálogo en memoria: lee únicamente los miembros TID/BID correspondientes de los ZIP. La conexión HTTPS utiliza el servicio SSL de la consola con validación del certificado y del nombre del servidor.
 
@@ -59,7 +68,7 @@ El catálogo principal utiliza `catalog-a`/`catalog-b` y `active.txt`; sólo nec
 
 [CheatSlips](https://www.cheatslips.com/homebrews/aio-switch-updater) requiere una cuenta y un token personal de API. Esta aplicación no solicita ese token ni presenta el servicio como proveedor automático. Se pueden importar códigos descargados con autorización mediante `manual-cheats.zip`, con créditos y estructura TID/BID.
 
-GBATemp se utiliza a través del [paquete publicado NXCheatCode](https://github.com/tomvita/NXCheatCode). No se rastrea todo el foro ni se eluden sus protecciones. Aportaciones no cubiertas por los proveedores admitidos pueden importarse manualmente con identificadores exactos. No se garantiza cobertura de todos los juegos ni versiones.
+GBATemp se utiliza a través de la selección documentada de OblivionReign y del [paquete publicado NXCheatCode](https://github.com/tomvita/NXCheatCode). No se rastrea todo el foro ni se eluden sus protecciones. Aportaciones no cubiertas por los proveedores admitidos pueden importarse manualmente con identificadores exactos. No se garantiza cobertura de todos los juegos ni versiones.
 
 ## Servidor propio
 

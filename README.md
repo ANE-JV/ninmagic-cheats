@@ -1,10 +1,10 @@
-# ninmagic-cheats 1.4.4
+# ninmagic-cheats 1.4.5
 
 NRO para Nintendo Switch con Atmosphère, interfaz en español, varios colores neón y el logo original de NinMagic dentro de la aplicación y en hbmenu. Independiente de NinMagic Cleaner.
 
-La 1.4.4 bloquea por huella los once códigos de Wonder FF773E90972D544E en revisión tras un cierre reportado y su coincidencia con códigos publicados para CD6E42AEE7934F4D. No se activan ni se instalan, aunque aparezcan en una caché antigua o cambien sus nombres. La referencia 1.0.0 procede de la fuente y no certifica un efecto en el juego.
+La 1.4.5 añade el catálogo de Arch9SK7 y una selección de archivos independientes de bad1dea, además de opciones publicadas por OblivionReign para Mario Wonder 1.2.1, Title ID `010015100B514000`, Build ID `FF773E90972D544E`. La coincidencia de versión declarada no certifica su efecto en la consola. Se conserva el bloqueo por huella de los once códigos anteriores de Wonder en revisión.
 
-Descargas 1.4.4: [aplicación NRO](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.4/ninmagic-cheats.nro), [paquete del overlay](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.4/experimental/ninmagic-overlay-1.4.4-experimental.zip) y [fuentes correspondientes](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.4/experimental/ninmagic-overlay-fuentes-1.4.4.zip).
+Descargas 1.4.5: [paquete completo para microSD](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.5/ninmagic-cheats-1.4.5.zip), [aplicación NRO](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.5/ninmagic-cheats.nro), [paquete del overlay](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.5/experimental/ninmagic-overlay-1.4.5-experimental.zip) y [fuentes correspondientes](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.5/experimental/ninmagic-overlay-fuentes-1.4.5.zip).
 
 Esta versión se centra en cheats de jugabilidad: vida, munición, dinero y otras opciones publicadas para cada juego. Se han retirado la sección de mods y las listas de ajustes FPS, resolución y gráficos. No se inventan opciones si el autor no las publicó.
 
@@ -14,7 +14,7 @@ El creador de códigos se ha retirado del paquete actual. El overlay permite sel
 
 ## Instalar
 
-Extrae el ZIP en la raíz de la microSD, uniendo las carpetas `switch` y `config`. El NRO queda en `switch/ninmagic-cheats/ninmagic-cheats.nro` y el catálogo en `config/NinMagicCheats/`.
+Extrae el ZIP en la raíz de la microSD, uniendo las carpetas `switch` y `config`. El NRO queda en `switch/ninmagic-cheats/ninmagic-cheats.nro` y el catálogo en `config/NinMagicCheats/`. El paquete completo también incorpora el overlay en `switch/.overlays/`; requiere un cargador compatible ya instalado. El actualizador interno sustituye el NRO; para actualizar también el overlay se copia el paquete completo o su ZIP separado.
 
 La base incluida funciona sin conexión. Al abrir la aplicación con Internet se comprueban las publicaciones nuevas del catálogo principal. Al seleccionar un juego se consultan también los proveedores adicionales por su Title ID y Build ID exactos; las comprobaciones recientes se reutilizan durante seis horas. También puedes actualizar manualmente. Si falla Internet o la descarga no se verifica, se conservan los códigos guardados y se indica qué fuente no pudo comprobarse.
 
@@ -84,14 +84,15 @@ Se utilizan estas fuentes de cheats publicados:
 - [Tomvita/NXCheatCode](https://github.com/tomvita/NXCheatCode): catálogo publicado `titles.zip`, compilado a partir de aportaciones de GBATemp.
 - [sthetix/nx-cheats-db](https://github.com/sthetix/nx-cheats-db): catálogo general `contents_complete.zip`, consultado tanto por el NRO como por el overlay.
 - [Tomvita/MyNXCheats](https://github.com/tomvita/MyNXCheats): archivo canónico publicado como `<TID>/<BID>.txt` en los lanzamientos del autor.
+- [Arch9SK7/MyNXCheats](https://github.com/Arch9SK7/MyNXCheats): ZIP pequeño del autor, lectura sólo del archivo con TID/BID exactos. Un paquete que incorpore dependencias de parches se rechaza; no se instalan mods.
+- [bad1dea/NXCheats](https://github.com/bad1dea/NXCheats): selección fijada a una revisión de 22 archivos para 20 juegos, sin los parches IPS ni archivos comprimidos acompañantes. Se actualiza al revisar una nueva versión de NinMagic; no se anuncia como seguimiento automático de todos los cambios del autor.
+- [OblivionReign en GBATemp](https://gbatemp.net/posts/10902179/): selección documentada exclusivamente para Mario Wonder `FF773E90972D544E`. [Procedencia, prueba y retirada](docs/wonder-1.2.1.md).
 - [ibnux/switch-cheat](https://github.com/ibnux/switch-cheat): fuente histórica, con archivos por Title ID y Build ID.
 - [OldManKain/Switch-Cheats-Mods-Saves](https://github.com/OldManKain/Switch-Cheats-Mods-Saves): se consultan sólo sus archivos de cheats por Title ID/Build ID; no se descargan mods ni partidas.
-- [sthetix/nx-cheats-db](https://github.com/sthetix/nx-cheats-db): archivo publicado `contents_complete.zip`. La lista reportada para Mario Wonder `FF773E90972D544E` queda en revisión y bloqueada; que una fuente la etiquete con ese BID no demuestra su compatibilidad.
-- [OldManKain/Switch-Cheats-Mods-Saves](https://github.com/OldManKain/Switch-Cheats-Mods-Saves): consulta exclusivamente sus archivos de cheats por TID y BID. Es una fuente histórica; no se descargan sus mods ni partidas.
 
 La fuente específica de FPS, resolución y gráficos se ha retirado de las consultas. Los ajustes visuales que aparezcan en una base general también se filtran de las opciones disponibles. Los códigos idénticos con los mismos maestros se muestran una vez, conservando sus orígenes. Las variantes con maestros distintos permanecen separadas.
 
-[CheatSlips](https://www.cheatslips.com/homebrews/aio-switch-updater) exige una cuenta y un token personal para su API; no se presenta como una integración automática. Los códigos obtenidos legalmente pueden incorporarse mediante importación local. GBATemp se utiliza a través del catálogo publicado NXCheatCode; no se rastrean sus páginas ni se eluden sus protecciones.
+[CheatSlips](https://www.cheatslips.com/homebrews/aio-switch-updater) exige una cuenta y un token personal para su API; no se presenta como una integración automática. Los códigos obtenidos legalmente pueden incorporarse mediante importación local. GBATemp se utiliza a través del catálogo publicado NXCheatCode y de la selección documentada de OblivionReign; no se rastrean sus páginas en la consola ni se eluden sus protecciones.
 
 No hace falta un servidor propio. Para usar uno HTTPS, consulta `Servidor-propio.txt` incluido en la carpeta de la aplicación.
 

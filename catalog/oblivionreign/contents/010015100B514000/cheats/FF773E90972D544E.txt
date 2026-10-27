@@ -1,0 +1,27 @@
+# Cheats by OblivionReign - original post #74069 / real post ID 10902179
+# Source: https://gbatemp.net/posts/10902179/
+# Public page: https://gbatemp.net/threads/cheat-codes-ams-and-sx-os-add-and-request.520293/page-3704#post-10902179
+# Author-declared game: Super Mario Bros. Wonder + Meetup in Bellabel Park
+# Author-declared version: 1.2.1
+# Title ID: 010015100B514000
+# Build ID: FF773E90972D544E
+# Effects have not been tested or guaranteed by NinMagic.
+# Water is the Bellabel Park resource named by the author, not generic health.
+# If that content is inactive or the resource is unfamiliar, do not enable Water.
+# Opcode words are unchanged. Water title brackets are editorial.
+# The author's Restore code remains in the original post, outside this normal list.
+# God Mode and Restore code are mutually exclusive; never enable both.
+# Unchecking a selection does not disable a code already running in the engine.
+# Removing an engine entry does not restore overwritten game instructions.
+# Close and reopen the game after removal to undo the God Mode patch.
+# Restarting does not revert changes already stored in saved data.
+
+[God Mode]
+040A0000 00886520 52800075
+
+[Max/ Infinite Bellabel Water]
+580F0000 037CBC70
+580F1000 000000E0
+780F0000 000010DC
+620F0000 00000000 000003E7
+
