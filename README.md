@@ -1,12 +1,14 @@
-# ninmagic-cheats 1.4.6
+# ninmagic-cheats 1.4.7
 
 NRO para Nintendo Switch con Atmosphère, interfaz en español, varios colores neón y el logo original de NinMagic dentro de la aplicación y en hbmenu. Independiente de NinMagic Cleaner.
+
+La 1.4.7 incorpora el canal oficial de actualizaciones dentro del NRO. Si falta `config/NinMagicCheats/update-url.txt`, consulta GitHub automáticamente. Un archivo de configuración presente sigue teniendo prioridad. Muestra «No hay actualizaciones pendientes» tras comprobar que la publicación coincide con el programa y el archivo instalado; una conexión fallida sigue indicando que no se pudo comprobar.
 
 La 1.4.6 corrige los registros antiguos que podían bloquear el actualizador después de instalar un NRO desde otro ZIP. Una operación terminada deja de tratarse como pendiente. Si quedan registros heredados, se ofrece revisarlos y archivarlos con confirmación, conservando el ejecutable y sus copias de seguridad. Un estado pendiente o ambiguo sigue bloqueado para su revisión.
 
 La 1.4.5 añade el catálogo de Arch9SK7 y una selección de archivos independientes de bad1dea, además de opciones publicadas por OblivionReign para Mario Wonder 1.2.1, Title ID `010015100B514000`, Build ID `FF773E90972D544E`. La coincidencia de versión declarada no certifica su efecto en la consola. Se conserva el bloqueo por huella de los once códigos anteriores de Wonder en revisión.
 
-Descargas 1.4.6: [paquete completo para microSD](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.6/ninmagic-cheats-1.4.6.zip), [aplicación NRO](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.6/ninmagic-cheats.nro), [paquete del overlay](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.6/experimental/ninmagic-overlay-1.4.6-experimental.zip) y [fuentes correspondientes](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.6/experimental/ninmagic-overlay-fuentes-1.4.6.zip).
+Descargas 1.4.7: [paquete completo para microSD](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.7/ninmagic-cheats-1.4.7.zip), [aplicación NRO](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.7/ninmagic-cheats.nro), [paquete del overlay](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.7/experimental/ninmagic-overlay-1.4.7-experimental.zip) y [fuentes correspondientes](https://raw.githubusercontent.com/ANE-JV/ninmagic-cheats/main/versions/v1.4.7/experimental/ninmagic-overlay-fuentes-1.4.7.zip).
 
 Esta versión se centra en cheats de jugabilidad: vida, munición, dinero y otras opciones publicadas para cada juego. Se han retirado la sección de mods y las listas de ajustes FPS, resolución y gráficos. No se inventan opciones si el autor no las publicó.
 
@@ -32,7 +34,7 @@ Las importaciones personales no se incluyen en el paquete público de NinMagic. 
 
 **Y en la biblioteca** actualiza el catálogo de cheats. **L: Actualizar app** consulta una versión nueva del propio NRO; también se comprueba al abrir.
 
-El canal público es independiente de la página web: `ANE-JV/ninmagic-cheats` en GitHub. Su configuración es `config/NinMagicCheats/update-url.txt`. El manifiesto y cada NRO se descargan por HTTPS sin credenciales y se exige que coincidan su versión, tamaño y SHA-256. La página web y sus paquetes no forman parte de este proyecto.
+El canal público es independiente de la página web: `ANE-JV/ninmagic-cheats` en GitHub. Desde la 1.4.7 su dirección HTTPS está integrada en la aplicación. El archivo opcional `config/NinMagicCheats/update-url.txt` permite configurar otro manifiesto HTTPS; si está presente debe contener una URL válida. No es necesario crear ese archivo para usar el canal oficial. El manifiesto y cada NRO se descargan por HTTPS sin credenciales y se exige que coincidan su versión, tamaño y SHA-256. La página web y sus paquetes no forman parte de este proyecto.
 
 Cuando se publique una versión posterior, **A: Descargar e instalar** autoriza su instalación. Se comprueban HTTPS, tamaño, SHA-256, estructura del NRO, nombre y versión NACP antes de reemplazarlo. Se conserva una copia numerada en `config/NinMagicCheats/app-update/`. Después cierra y vuelve a abrir NinMagic. Desde la versión 1.3.0 puedes recibir esta actualización dentro de la aplicación; una primera instalación requiere copiar el paquete a la consola.
 
